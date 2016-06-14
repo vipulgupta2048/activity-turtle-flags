@@ -394,6 +394,7 @@ class LogoCode:
         if self._disable_help:
             self.tw.no_help = False
             self._disable_help = False
+        self.tw.display_coordinates()
 
     def icall(self, fcn, *args):
         """ Add a function and its arguments to the program stack. """
@@ -608,6 +609,7 @@ class LogoCode:
         self.hidden_turtle = None
         self.start_time = time()
         self.clear_value_blocks()
+        self.tw.activity.restore_state()
 
     def clear_value_blocks(self):
         if not hasattr(self, 'value_blocks_to_update'):
